@@ -1,0 +1,58 @@
+{
+    "architecture_news": [
+        {
+            "id": 1,
+            "title": "Revolucionario Edificio Autosostenible en Dubai",
+            "description": "Un nuevo rascacielos incorpora paneles solares translúcidos y sistemas de recolección de agua de lluvia, estableciendo nuevos estándares en arquitectura sostenible.",
+            "date": "2024-01-15",
+            "author": "María González",
+            "category": "Arquitectura Sostenible",
+            "image": "../assets/news(2).jpg"
+        },
+        {
+            "id": 2,
+            "title": "Diseño Biomimético Gana Premio Internacional",
+            "description": "Estudio de arquitectura español desarrolla estructura inspirada en panales de abejas que optimiza el espacio y la eficiencia energética.",
+            "date": "2024-01-10",
+            "author": "Carlos Ruiz",
+            "category": "Innovación",
+            "image": "../assets/news(1).jpg"
+        },
+        {
+            "id": 3,
+            "title": "Nueva Tendencia: Micro-apartamentos Transformables",
+            "description": "Arquitectos japoneses presentan diseños revolucionarios de espacios de 30m² que se transforman en múltiples ambientes.",
+            "date": "2024-01-05",
+            "author": "Akiko Tanaka",
+            "category": "Diseño Interior",
+            "image": "../assets/news(3).jpg"
+        },
+        {
+            "id": 4,
+            "title": "Material Revolucionario para Fachadas",
+            "description": "Nuevo material cambia de color según la temperatura exterior, mejorando la eficiencia energética de los edificios.",
+            "date": "2024-01-02",
+            "author": "John Smith",
+            "category": "Materiales",
+            "image": "../assets/news(3).png"
+        },
+        {
+            "id": 5,
+            "title": "Parque Vertical Urbano en São Paulo",
+            "description": "Proyecto innovador integra jardines verticales y espacios públicos en estructura de 30 pisos en el centro de la ciudad.",
+            "date": "2023-12-28",
+            "author": "Ana Lima",
+            "category": "Urbanismo",
+            "image": "../assets/news(2).png"
+        },
+        {
+            "id": 6,
+            "title": "Casa Impresa en 3D con Materiales Reciclados",
+            "description": "Startup holandesa completa la primera vivienda totalmente impresa en 3D utilizando plástico reciclado como material principal.",
+            "date": "2023-12-20",
+            "author": "Erik Van Der Berg",
+            "category": "Tecnología",
+            "image": "../assets/news(1).png"
+        }
+    ]
+}
