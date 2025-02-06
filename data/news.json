@@ -7,7 +7,7 @@
             "date": "2024-01-15",
             "author": "María González",
             "category": "Arquitectura Sostenible", 
-            "image": "../assets/news(2).jpg"
+            "image": "../images/news(2).jpg"
         },
         {
             "id": 2,
@@ -16,7 +16,7 @@
             "date": "2024-01-10",
             "author": "Carlos Ruiz",
             "category": "Innovación",
-            "image": "../assets/news(1).jpg"
+            "image": "../images/news(1).jpg"
         },
         {
             "id": 3,
@@ -25,7 +25,7 @@
             "date": "2024-01-05",
             "author": "Akiko Tanaka",
             "category": "Diseño Interior",
-            "image": "../assets/news(3).jpg"
+            "image": "../images/news(3).jpg"
         },
         {
             "id": 4,
@@ -34,7 +34,7 @@
             "date": "2024-01-02",
             "author": "John Smith",
             "category": "Materiales",
-            "image": "../assets/news(3).png"
+            "image": "../images/news(3).png"
         },
         {
             "id": 5,
@@ -43,7 +43,7 @@
             "date": "2023-12-28",
             "author": "Ana Lima",
             "category": "Urbanismo",
-            "image": "../assets/news(2).png"
+            "image": "../images/news(2).png"
         },
         {
             "id": 6,
@@ -52,7 +52,7 @@
             "date": "2023-12-20",
             "author": "Erik Van Der Berg",
             "category": "Tecnología",
-            "image": "../assets/news(1).png"
+            "image": "../images/news(1).png"
         }
     ]
 }
