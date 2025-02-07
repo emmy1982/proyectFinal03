@@ -122,17 +122,14 @@ header {
 
 /* Navegación */
 nav {
+    position: fixed;
+    width: 100%;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    position: fixed !important;
-    width: 100%;
-    top: 0;
-    left: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-    background-color: transparent !important;
 }
 
 nav.shadow {
@@ -1254,7 +1251,7 @@ strong {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: rgba(0, 0, 0, 0.4);
+        align-items: center;
         padding: 50px 30px;
     }
     /* testimonios */
@@ -1301,16 +1298,82 @@ strong {
       }
 }
 
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--background-color);
+        padding-top: 80px;
+        transition: 0.3s;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
 
-}
+    .nav-menu.active {
+        right: 0;
+    }
 
+    /* Ajustes del slider para móvil */
+   
+    .hero {
+        height: 100vh;
+    }
 
-@media (max-width: 768px) {
-    .btn-top {
+    .hero .swiper-slide {
+        height: 100vh;
+    }
+
+    .content-title {
+        width: 90%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .content-title h1 {
+        font-size: 2rem;
+        
+    }
+
+    .content-title p {
+        font-size: 3.5rem;
+        font-weight: 400!important;
+        text-align: center!important;
+        padding-bottom:50px ;
+    }
+
+    /* Ajustes del segundo slider */
+    .hero-content-slider2 {
+        width: 90%;
+        height: auto;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .containerShadow {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Controles del slider */
+    .slider-controls {
         bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Iconos sociales */
+    .social-icons {
+        bottom: 20px;
+        width: 100%;
+        justify-content: center;
     }
 }
+
+
 

@@ -92,24 +92,19 @@ var swiper2 = new Swiper(".sliderHero2", {
     },
   },
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const prevSlideButton = document.getElementById('prev-slide');
+  const nextSlideButton = document.getElementById('next-slide');
 
+  prevSlideButton.addEventListener('click', () => {
+      swiper2.slidePrev();
+  });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper(".hero-swiper", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        autoplay: {
-            delay: 6000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-       
-    });
+  nextSlideButton.addEventListener('click', () => {
+      swiper2.slideNext();
+  });
 });
+
 
 (function() {
 	var StickyBackground = function(element) {
@@ -215,29 +210,3 @@ btnBackToTop.addEventListener('click', () => {
 });
 
 
-// Agregar esta inicialización del Swiper
-const progressCircle = document.querySelector(".autoplay-progress svg");
-const progressContent = document.querySelector(".autoplay-progress span");
-
-const swiperGaleria = new Swiper(".mySwiper", {
-    spaceBetween: 0,
-    centeredSlides: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
-    on: {
-        autoplayTimeLeft(s, time, progress) {
-            progressCircle.style.setProperty("--progress", 1 - progress);
-            progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-        }
-    }
-});
