@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
+    const hamburgerSpam = document.querySelectorAll('.hamburger span');
     const navMenu = document.querySelector('.nav-menu');
     const navbar = document.querySelector('nav'); // Asegurarse de seleccionar el elemento correcto
     const links = document.querySelectorAll('.nav-link');
@@ -24,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Efecto de scroll en nav
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+            hamburgerSpam.forEach(span => { 
+                span.style.background = 'var(--text-color-black)!important';
+            });
             navbar.classList.add('shadow');
             navbar.style.background = 'var(--background-color)!important';
             navbar.style.transition = 'all 0.8s ease';
@@ -32,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.style.color = 'var(--text-color-black)!important';
             });
         } else {
+            hamburgerSpam.forEach(span => { 
+                span.style.background = 'var(--terciary-white)!important';
+            });
             navbar.classList.remove('shadow');
             navbar.style.background = 'transparent';
             navbar.style.transition = 'all 0.5s';

@@ -157,7 +157,7 @@
                         <button class="btn rounded-0 mt-4">SABER MÁS</button>
                     </div>
                     <div class="col-md-6 h-100 my-auto">
-                        <div class="row mt-4">
+                        <div class="row mt-4 d-none d-md-flex">
                             <div class="col-md-4 mt-5 pt-5">
                                 <img class="img-fluid mb-0 mt-5 img-about" src="./images/img-home.png"
                                     alt="Galería de imágenes" style="margin-top: 150px;">
@@ -167,7 +167,7 @@
                                     src="./images/img-home2.png" alt="Galería de imágenes">
                             </div>
                         </div>
-                        <div class="row row-about">
+                        <div class="row row-about d-none d-md-flex">
                             <div class="col-md-8">
                                 <img class="img-fluid mb-4 w-100 h-50" src="./images/img-home5.png"
                                     alt="Galería de imágenes">
@@ -179,6 +179,17 @@
                         </div>
                     </div>
                 </div>
+                <!-- Sobre Nosotros Responsive -->
+                <div class="row d-md-none pt-5">
+                    <div class="col-md-6 col-6">
+                        <img class="img-fluid mb-4" src="./images/img-home.png" alt="Galería de imágenes">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img class="img-fluid mb-4" src="./images/img-home2.png" alt="Galería de imágenes">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <img class="img-fluid mb-4 h-50 w-100 object-fit-cover" src="./images/img-hero-8.jpg" alt="Galería de imágenes">
+                    </div>
             </div>
         </section>
 
@@ -188,11 +199,11 @@
                 <p class="fw-bold p-title">
                     NUESTROS PROYECTOS
                 </p>
-                <h2 class="title-h2 mb-4 w-75">
+                <h2 class="title-h2 mb-4 w-75  pb-sm-5">
                     Nuestra <br>
                     Infraestructura y Proyectos
                 </h2>
-                <div class="galeryPro">
+                <div class="galeryPro d-none d-md-flex">
                     <div class="container-img-galery">
                         <img src="./images/img-home.png" alt="Imagenes de proyectos realizados" width="800"
                             height="550">
@@ -233,90 +244,140 @@
                         </h2>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Cómo trabajamos -->
-        <section class="py-5">
-            <div class="container">
-                <p class="fw-bold p-title">
-                    COMO TRABAJAMOS
-                </p>
-                <h2 class="title-h2 mb-4 w-50">
-                    Como Funciona Nuestra Empresa
-                </h2>
-                <p class="w-75">
-                    En ARCHITECT nos esforzamos por ofrecer un servicio de calidad y a la altura de las expectativas de
-                    nuestros clientes.
-                    Para ello, contamos con un equipo de profesionales altamente capacitados y con una amplia
-                    experiencia en el sector,
-                    lo que nos permite garantizar la calidad de nuestros proyectos y la satisfacción de nuestros
-                    clientes.
-                </p>
-                <div class="row pt-3">
-                    <div class="col-md-3">
-                        <div class="card p-5 rounded-0 card-work cw-1">
-                            <p class="number-work">01</p>
-                            <h3 class="title-work fw-bold fs-2 pb-3">Consulta</h3>
-                            <p class="text-work pt-3">En la primera consulta, nos reunimos con el cliente para conocer
-                                sus
-                                necesidades y
-                                expectativas.
-                            </p>
-                            <p class="link-work">
-                                <a href="#" class="">SABER MÁS
-                                    <i class="bi bi-arrow-right ms-5 fs-2"></i>
-                                </a>
-                            </p>
+                <!-- galeryPro responsive -->
+                <div class="galeryProResponsive">
+                    <div class="container-img-galery-R d-md-none mb-0">
+                        <div class="image-container">
+                            <img class="object-fit-cover img-fluid w-100" src="./images/img-home.png" alt="Imagenes de proyectos realizados" style="height: 200px;">
+                             <h2 class="py-3">
+                                <a class="text-dark text-decoration-none" href="#">ARQUITECTURA</a>
+                            </h2>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card p-5 rounded-0 card-work cw-2">
-                            <p class="number-work">02</p>
-                            <h3 class="title-work fw-bold fs-2 pb-3">Ofertas</h3>
-                            <p class="text-work pt-3">
-                                Conocemos las necesidades del cliente, preparamos una oferta con
-                                un
-                                presupuesto detallado.
-                            </p>
-                            <p class="link-work">
-                                <a href="#" class="">SABER MÁS
-                                    <i class="bi bi-arrow-right ms-5 fs-2"></i>
-                                </a>
-                            </p>
+                    <div class="container-img-galery-R d-md-none mb-0">
+                        <div class="image-container">
+                            <img class="object-fit-cover img-fluid w-100" src="./images/img-hero-5.jpg" alt="Imagenes de proyectos realizados" style="height: 200px;">
+                             <h2 class="py-3">
+                                <a class="text-dark text-decoration-none" href="#">DISEÑO <br>INTERIORES</a>
+                            </h2>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card p-5 rounded-0 card-work cw-3">
-                            <p class="number-work">03</p>
-                            <h3 class="title-work fw-bold fs-2 pb-3">Monitoreo</h3>
-                            <p class="text-work pt-3">Realizamos un seguimiento
-                                para garantizar
-                                la calidad y el cumplimiento de los plazos.
-                            </p>
-                            <p class="link-work">
-                                <a href="#" class="">SABER MÁS
-                                    <i class="bi bi-arrow-right ms-5 fs-2"></i>
-                                </a>
-                            </p>
+                    <div class="container-img-galery-R d-md-none mb-0">
+                        <div class="image-container">
+                            <img class="object-fit-cover img-fluid w-100" src="./images/room.jpg" alt="Imagenes de proyectos realizados" style="height: 200px;">
+                             <h2 class="py-3">
+                                <a class="text-dark text-decoration-none" href="#">HOGAR</a>
+                            </h2>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card p-5 rounded-0 card-work">
-                            <p class="number-work">04</p>
-                            <h3 class="title-work fw-bold fs-2 pb-3">Completado</h3>
-                            <p class="text-work pt-3">
-                                Una vez finalizado el proyecto, entregamos al cliente la documentación
-                                correspondiente.
-                            </p>
-                            <p class="link-work">
-                                <a href="#" class="">SABER MÁS
-                                    <i class="bi bi-arrow-right ms-5 fs-2"></i>
-                                </a>
-                            </p>
+                    <div class="container-img-galery-R d-md-none mb-0">
+                        <div class="image-container">
+                            <img class="object-fit-cover img-fluid w-100" src="./images/img-hero-8.jpg" alt="Imagenes de proyectos realizados" style="height: 200px;">
+                             <h2 class="py-3">
+                                <a class="text-dark text-decoration-none" href="#">BAÑOS</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="container-img-galery-R d-md-none mb-0">
+                        <div class="image-container">
+                            <img class="object-fit-cover img-fluid w-100" src="./images/modelado.jpg" alt="Imagenes de proyectos realizados" style="height: 200px;">
+                             <h2 class="py-3">
+                                <a class="text-dark text-decoration-none" href="#">MODELADO <br> 3D</a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="container-img-galery-R d-md-none mb-0">
+                        <div class="image-container">
+                            <img class="object-fit-cover img-fluid w-100" src="./images/img-home3.png" alt="Imagenes de proyectos realizados" style="height: 200px;">
+                             <h2 class="py-3">
+                                <a class="text-dark text-decoration-none" href="#">DISEÑO <br> EXTERIORES</a>
+                            </h2>
                         </div>
                     </div>
                 </div>
+        </section>
+
+        <!-- Cómo trabajamos -->
+        <section class="py-5 mt-md-5">
+            <div class="container">
+            <p class="fw-bold p-title">
+                COMO TRABAJAMOS
+            </p>
+            <h2 class="title-h2 mb-4 w-50">
+                Como Funciona Nuestra Empresa
+            </h2>
+            <p class="w-75">
+                En ARCHITECT nos esforzamos por ofrecer un servicio de calidad y a la altura de las expectativas de
+                nuestros clientes.
+                Para ello, contamos con un equipo de profesionales altamente capacitados y con una amplia
+                experiencia en el sector,
+                lo que nos permite garantizar la calidad de nuestros proyectos y la satisfacción de nuestros
+                clientes.
+            </p>
+            <div class="row pt-3">
+                <div class="col-12 col-md-6 col-lg-3">
+                <div class="card p-5 rounded-0 card-work cw-1">
+                    <p class="number-work">01</p>
+                    <h3 class="title-work fw-bold fs-2 pb-3">Consulta</h3>
+                    <p class="text-work pt-3">En la primera consulta, nos reunimos con el cliente para conocer
+                    sus
+                    necesidades y
+                    expectativas.
+                    </p>
+                    <p class="link-work">
+                    <a href="#" class="">SABER MÁS
+                        <i class="bi bi-arrow-right ms-5 fs-2"></i>
+                    </a>
+                    </p>
+                </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                <div class="card p-5 rounded-0 card-work cw-2">
+                    <p class="number-work">02</p>
+                    <h3 class="title-work fw-bold fs-2 pb-3">Ofertas</h3>
+                    <p class="text-work pt-3">
+                    Conocemos las necesidades del cliente, preparamos una oferta con
+                    un
+                    presupuesto detallado.
+                    </p>
+                    <p class="link-work">
+                    <a href="#" class="">SABER MÁS
+                        <i class="bi bi-arrow-right ms-5 fs-2"></i>
+                    </a>
+                    </p>
+                </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                <div class="card p-5 rounded-0 card-work cw-3">
+                    <p class="number-work">03</p>
+                    <h3 class="title-work fw-bold fs-2 pb-3">Monitoreo</h3>
+                    <p class="text-work pt-3">Realizamos un seguimiento
+                    para garantizar
+                    la calidad y el cumplimiento de los plazos.
+                    </p>
+                    <p class="link-work">
+                    <a href="#" class="">SABER MÁS
+                        <i class="bi bi-arrow-right ms-5 fs-2"></i>
+                    </a>
+                    </p>
+                </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                <div class="card p-5 rounded-0 card-work">
+                    <p class="number-work">04</p>
+                    <h3 class="title-work fw-bold fs-2 pb-3">Completado</h3>
+                    <p class="text-work pt-3">
+                    Una vez finalizado el proyecto, entregamos al cliente la documentación
+                    correspondiente.
+                    </p>
+                    <p class="link-work">
+                    <a href="#" class="">SABER MÁS
+                        <i class="bi bi-arrow-right ms-5 fs-2"></i>
+                    </a>
+                    </p>
+                </div>
+                </div>
+            </div>
             </div>
         </section>
 
