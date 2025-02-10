@@ -7,7 +7,7 @@
             "date": "2024-01-15",
             "author": "María González",
             "category": "Arquitectura Sostenible", 
-            "image": "../../images/news(2).jpg"
+            "image": "./../../images/news(2).jpg"
         },
         {
             "id": 2,
