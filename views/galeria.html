@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARCHITECT | Arquitectura & Interior</title>
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="../css/lightbox.css" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <!-- Boostrap -->
@@ -23,10 +25,11 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
 </head>
 
 <body>
-    <header class="header-galeria" >
+    <header class="header-galeria">
         <!-- Navbar -->
         <nav>
             <div class="logo">
@@ -55,41 +58,158 @@
 
         <!-- Hero -->
         <div class="hero-G"></div>
-            <div class="hero-title-G">    
-                <h1>
-                    Galería de Proyectos
-                </h1>
-                <p class="w-75">
-                    Descubre nuestros proyectos más recientes y cómo hemos transformado los espacios de nuestros
-                    clientes.
-                </p>
-            </div>
-       
-    </header>
-    <main> 
-        <section>
-        <div class="container container-galeria-presentacion p-4 p-md-4">
-            <div class="galeria-intro">
-            <h2 class="text-dark">Nuestros Proyectos Destacados</h2>
-            <p class="w-75 mb-5">
-                En ARCHITECT nos especializamos en crear espacios únicos que combinan funcionalidad y estética.
-                A lo largo de nuestra trayectoria, hemos desarrollado proyectos innovadores que reflejan nuestra
-                pasión
-                por la arquitectura contemporánea y el diseño sostenible. A continuación, presentamos una selección
-                de nuestros trabajos más destacados.
+        <div class="hero-title-G">
+            <h1>
+                Galería de Proyectos
+            </h1>
+            <p class="w-75">
+                Descubre nuestros proyectos más recientes y cómo hemos transformado los espacios de nuestros
+                clientes.
             </p>
-            </div>
         </div>
-       
+
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Botón subir -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <section>
+
+            <!-- Introducción a Nuestros Proyectos -->
+            <div class="container container-galeria-presentacion p-4 p-md-4 mt-5">
+                <div class="galeria-intro">
+                    <h2 class="text-dark">Nuestros Proyectos Destacados</h2>
+                    <p class="w-75 mb-5">
+                        En ARCHITECT nos especializamos en crear espacios únicos que combinan funcionalidad y estética.
+                        A lo largo de nuestra trayectoria, hemos desarrollado proyectos innovadores que reflejan nuestra
+                        pasión
+                        por la arquitectura contemporánea y el diseño sostenible. A continuación, presentamos una
+                        selección
+                        de nuestros trabajos más destacados.
+                    </p>
+                </div>
+            </div>
+
             <div class="container">
                 <p class="fw-bold p-title">
                     ULTIMOS PROYECTOS ARQUITECTURA
                 </p>
+
+
+                <!-- Galeria de imagenes -->
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <a href="../images/galeria/img-hero1.jpg" data-lightbox="galeria"
+                            data-title="Estructura de Diseño">
+                            <img class="img-gallery-special" src="../images/galeria/img-hero1.jpg"
+                                alt=" Estructura de Diseño">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-12 p-0">
+                        <div class="row">
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/galeria/img-hero2.jpg" data-lightbox="galeria"
+                                    data-title="Estructura de Piedra y Madera">
+                                    <img class="img-gallery-1" src="../images/galeria/img-hero2.jpg"
+                                        alt="Estructura de Piedra y Madera">
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/galeria/img-hero3.jpg" data-lightbox="galeria"
+                                    data-title="Extructura Minimalista">
+                                    <img class="img-gallery-1" src="../images/galeria/img-hero3.jpg"
+                                        alt="Casa de Montaña">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/galeria/img-home2.png" data-lightbox="galeria"
+                                    data-title="Casa de Campo">
+                                    <img class="img-gallery-1" src="../images/galeria/img-home2.png"
+                                        alt="Extructura Minimalista">
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/galeria/img-home3.png" data-lightbox="galeria"
+                                    data-title="Facahada de Edificio">
+                                    <img class="img-gallery-1" src="../images/galeria/img-home3.png"
+                                        alt="Facahada de Edificio">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="container mt-5 pt-5">
+                <p class="fw-bold p-title">
+                    CONTACTANOS PARA UN PROYECTO
+                </p>
+                <P class="w-75 pb-5">
+                    ¿Tienes un proyecto en mente? Contáctanos para recibir más información sobre nuestros servicios y
+                    presupuestos.
+                </P>
+                <a href="./pages/contacto.html" class="btn">Contactar</a>
+            </div>
+            <div class="container mt-5 pt-5">
+                <p class="fw-bold p-title">
+                    DISEÑO DE INTERIORES
+                </p>
+            </div>
+
+            <!-- Galeria de imagenes 2 -->
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <a href="../images/img-hero-8.jpg" data-lightbox="galeria2" data-title="Baño de Diseño">
+                        <img class="img-gallery-special" src="../images/img-hero-8.jpg" alt=" Baño de Diseño">
+                    </a>
+                </div>
+                <div class="col-md-6 col-12 p-0">
+                    <div class="row">
+                        <div class="col-md-6 col-12 p-0 position-relative">
+                            <a href="../images/img-hero-9.jpg" data-lightbox="galeria2"
+                                data-title="Diseño de Dormitorios">
+                                <img class="img-gallery-1" src="../images/img-hero-9.jpg" alt="Diseño de Dormitorios">
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-12 p-0 position-relative">
+                            <a href="../images/img-hero-7.jpg" data-lightbox="galeria2" data-title="Cocina Minimalista">
+                                <img class="img-gallery-1" src="../images/img-hero-7.jpg" alt="Cocina Minimalista">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12 p-0 position-relative">
+                            <a href="../images/room.jpg" data-lightbox="galeria2" data-title="Dormitorio Moderno">
+                                <img class="img-gallery-1" src="../images/room.jpg" alt="Dormitorio Moderno">
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-12 p-0 position-relative">
+                            <a href="../images/news(3).jpg" data-lightbox="galeria2"
+                                data-title="Apartamentos Minimalistas">
+                                <img class="img-gallery-1" src="../images/news(3).jpg" alt="Apartamentos Minimalistas">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="container mt-5 pt-5">
+                <P class="w-75 pb-5">
+                    Nuestro equipo de diseñadores de interiores se especializa en crear espacios acogedores y
+                    funcionales que
+                    reflejan la personalidad y estilo de nuestros clientes. Desde cocinas modernas hasta dormitorios
+                    minimalistas, nuestros proyectos de diseño de interiores destacan por su elegancia y originalidad.
+                </P>
         </section>
-
-
     </main>
+
+    <!-- Footer -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
@@ -175,6 +295,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/lightbox-plus-jquery.js"></script>
 
     <!-- Boostrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
