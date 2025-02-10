@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cargar datos JSON
   const containerJson = document.querySelector('.containerJson');
 
-  fetch('../data/news.json')
+  fetch('/../data/news.json')
       .then(response => {
           if (!response.ok) {
               throw new Error('Error en la solicitud: ' + response.statusText);
