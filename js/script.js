@@ -2,18 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const hamburgerSpam = document.querySelectorAll('.hamburger span');
     const navMenu = document.querySelector('.nav-menu');
-    const navbar = document.querySelector('nav'); // Asegurarse de seleccionar el elemento correcto
+    const navbar = document.querySelector('nav'); 
     const links = document.querySelectorAll('.nav-link');
     const logo = document.querySelector('.logo a');
 
-    // Toggle menú hamburguesa y prevenir scroll cuando está abierto
+    // Menú hamburguesa
+
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
     });
 
-    // Cerrar menú al hacer click en los enlaces
+
     links.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -23,9 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Efecto de scroll en nav
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            hamburgerSpam.forEach(span => { 
+            hamburgerSpam.forEach(span => {
                 span.style.background = 'var(--text-color-black)!important';
             });
             navbar.classList.add('shadow');
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.style.color = 'var(--text-color-black)!important';
             });
         } else {
-            hamburgerSpam.forEach(span => { 
+            hamburgerSpam.forEach(span => {
                 span.style.background = 'var(--terciary-white)!important';
             });
             navbar.classList.remove('shadow');
@@ -49,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// Slider de index principal
 
 var swiper1 = new Swiper(".sliderHero", {
     spaceBetween: 0,
@@ -69,100 +74,110 @@ var swiper1 = new Swiper(".sliderHero", {
     loop: true
 });
 
+
+// slider pequeño de index
+
 var swiper2 = new Swiper(".sliderHero2", {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  centeredSlides: true,
-  freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  loop: true,
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    centeredSlides: true,
+    freeMode: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
-    640: {
-      slidesPerView: 2,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-    1024: {
-      slidesPerView: 3,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
     },
-  },
+    loop: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        640: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
 });
+
+// Botones de slider pequeño
+
 document.addEventListener('DOMContentLoaded', () => {
-  const prevSlideButton = document.getElementById('prev-slide');
-  const nextSlideButton = document.getElementById('next-slide');
+    const prevSlideButton = document.getElementById('prev-slide');
+    const nextSlideButton = document.getElementById('next-slide');
 
-  prevSlideButton.addEventListener('click', () => {
-      swiper2.slidePrev();
-  });
+    prevSlideButton.addEventListener('click', () => {
+        swiper2.slidePrev();
+    });
 
-  nextSlideButton.addEventListener('click', () => {
-      swiper2.slideNext();
-  });
+    nextSlideButton.addEventListener('click', () => {
+        swiper2.slideNext();
+    });
 });
 
 
-(function() {
-	var StickyBackground = function(element) {
-		this.element = element;
-		this.scrollingElement = this.element.getElementsByClassName('sticky-hero__content')[0];
-		this.nextElement = this.element.nextElementSibling;
-		this.scrollingTreshold = 0;
-		this.nextTreshold = 0;
-		initStickyEffect(this);
-	};
+// Plugin para hacer scroll al texto del video
 
-	function initStickyEffect(element) {
-		var observer = new IntersectionObserver(stickyCallback.bind(element), { threshold: [0, 0.1, 1] });
-		observer.observe(element.scrollingElement);
-		if(element.nextElement) observer.observe(element.nextElement);
-	};
+(function () {
+    var StickyBackground = function (element) {
+        this.element = element;
+        this.scrollingElement = this.element.getElementsByClassName('sticky-hero__content')[0];
+        this.nextElement = this.element.nextElementSibling;
+        this.scrollingTreshold = 0;
+        this.nextTreshold = 0;
+        initStickyEffect(this);
+    };
 
-	function stickyCallback(entries, observer) {
-		var threshold = entries[0].intersectionRatio.toFixed(1);
-		(entries[0].target ==  this.scrollingElement)
-			? this.scrollingTreshold = threshold
-			: this.nextTreshold = threshold;
+    function initStickyEffect(element) {
+        var observer = new IntersectionObserver(stickyCallback.bind(element), { threshold: [0, 0.1, 1] });
+        observer.observe(element.scrollingElement);
+        if (element.nextElement) observer.observe(element.nextElement);
+    };
 
-		Util.toggleClass(this.element, 'sticky-hero--media-is-fixed', (this.nextTreshold > 0 || this.scrollingTreshold > 0));
-	};
+    function stickyCallback(entries, observer) {
+        var threshold = entries[0].intersectionRatio.toFixed(1);
+        (entries[0].target == this.scrollingElement)
+            ? this.scrollingTreshold = threshold
+            : this.nextTreshold = threshold;
+
+        Util.toggleClass(this.element, 'sticky-hero--media-is-fixed', (this.nextTreshold > 0 || this.scrollingTreshold > 0));
+    };
 
 
-	var stickyBackground = document.getElementsByClassName('js-sticky-hero'),
-		intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype);
-	if(stickyBackground.length > 0 && intersectionObserverSupported) { // if IntersectionObserver is not supported, animations won't be triggeres
-		for(var i = 0; i < stickyBackground.length; i++) {
-			(function(i){ // if animations are enabled -> init the StickyBackground object
-        if( Util.hasClass(stickyBackground[i], 'sticky-hero--overlay-layer') || Util.hasClass(stickyBackground[i], 'sticky-hero--scale')) new StickyBackground(stickyBackground[i]);
-      })(i);
-		}
-	}
+    var stickyBackground = document.getElementsByClassName('js-sticky-hero'),
+        intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype);
+    if (stickyBackground.length > 0 && intersectionObserverSupported) { // if IntersectionObserver is not supported, animations won't be triggeres
+        for (var i = 0; i < stickyBackground.length; i++) {
+            (function (i) { // if animations are enabled -> init the StickyBackground object
+                if (Util.hasClass(stickyBackground[i], 'sticky-hero--overlay-layer') || Util.hasClass(stickyBackground[i], 'sticky-hero--scale')) new StickyBackground(stickyBackground[i]);
+            })(i);
+        }
+    }
 }());
 
-  // Cargar datos JSON
-  const containerJson = document.querySelector('.containerJson');
 
-  fetch('./data/news.json')
-      .then(response => {
-          if (!response.ok) {
-              throw new Error('Error en la solicitud: ' + response.statusText);
-          }
-          return response.json();
-      })
-      .then(data => {
-          data.architecture_news.forEach(element => {
-              containerJson.innerHTML += `
+// Cargar datos JSON
+
+const containerJson = document.querySelector('.containerJson');
+
+fetch('./data/news.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la solicitud: ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        data.architecture_news.forEach(element => {
+            containerJson.innerHTML += `
                   <div class="news-card">
                       <img src="${element.image}" alt="${element.title}">
                       <div class="news-content">
@@ -173,32 +188,36 @@ document.addEventListener('DOMContentLoaded', () => {
                       </div>
                   </div>
               `;
-          });
-      })
-      .catch(error => {
-          console.error('Error al cargar los datos:', error);
-          containerJson.innerHTML = '<p>Error al cargar las noticias</p>';
-      });
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar los datos:', error);
+        containerJson.innerHTML = '<p>Error al cargar las noticias</p>';
+    });
 
-    //   Slider testimonios
-    var swiper = new Swiper(".testimonials", {
-        effect: "flip",
-        grabCursor: true,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
-          loop: true,
-      });
+
+//   Slider testimonios
+
+var swiper = new Swiper(".testimonials", {
+    effect: "flip",
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+});
+
 
 // Botón subir
+
 const btnBackToTop = document.getElementById('btn-top');
 
 window.addEventListener('scroll', () => {
@@ -216,4 +235,57 @@ btnBackToTop.addEventListener('click', () => {
     });
 });
 
+
+// OpenStreetMap
+
+document.addEventListener('DOMContentLoaded', () => {
+    let options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    }
+    
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            success,
+            error,
+            options
+        )
+    } else {
+        alert("Los servicios de geolocalizacion no estan disponibles")
+    }
+    
+    
+    
+    function success(position) {
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+    
+        let map = L.map('map', {
+            center: [latitude, longitude],
+            zoom: 14
+        })
+    
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Architect' }).addTo(map)
+    
+        L.Routing.control({
+            waypoints: [
+                L.latLng(latitude, longitude),
+                L.latLng(37.075558, -3.601335)
+            ],
+            language: 'es',
+        }).addTo(map);
+    }
+    
+    function error() {
+        let map = L.map('map', {
+            center: [37.075558, -3.601335],
+            zoom: 14
+        })
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Architect' }).addTo(map)
+
+    }
+    
+});
 
