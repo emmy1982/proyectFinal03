@@ -1510,13 +1510,13 @@ video {
 
     /* Ajustes del slider para móvil */
 
-    .hero {
-        height: 110vh;
+    /* .hero {
+        height: 100vh;
     }
 
     .hero .swiper-slide {
         height: 100vh;
-    }
+    } */
 
     .content-title {
         width: 90%;
