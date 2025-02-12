@@ -262,14 +262,15 @@ strong {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -30px;
     display: none;
     padding: 1rem;
     min-width: 250px !important;
     list-style: none;
     z-index: 1000;
     border: none !important;
-    background-color: transparent !important;
+    border-radius: 0 !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(34, 34, 34, 0.8))!important;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -1171,16 +1172,11 @@ video {
     background-attachment: fixed;
 }
 
-/* ***************************************************************************
-******************************************************************************
-*****************************PRESUPUEST0-FORM*************************************** */
-
-
 .form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
     margin-top: 80px!important;
 }
@@ -1285,9 +1281,9 @@ video {
 }
 
 .form div[id="presupuesto-final"] p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .form .btn {
@@ -1307,8 +1303,8 @@ video {
 .form .error {
     color: #dc3545;
     font-size: 0.9rem;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+   
 }
 
 /* Responsive adjustments for the form */

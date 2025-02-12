@@ -44,8 +44,8 @@
                 <li class="dropdown">
                     <a href="./galeria.html" class="nav-link">Proyectos</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Arquitectura Exteriores</a></li>
-                        <li><a href="#">Diseño de Interiores</a></li>
+                        <li><a href="./galeria.html#exteriores">Arquitectura Exteriores</a></li>
+                        <li><a href="./galeria.html#interiores">Diseño de Interiores</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="nav-link activo">Presupuestos</a></li>
@@ -71,7 +71,7 @@
     <!-- Main -->
     <main>
         <section>
-            <div class="container py-5 my-5">
+            <div class="container pt-5 mt-5">
                 <div class=" p-5 shadow">
                     <h2 class="text-dark">Solicita tu presupuesto</h2>
                     <p class="fs-5 w-75">
@@ -99,66 +99,60 @@
                             <span class="error" id="emailError"></span>
                         </div>
                         <button class="btn rounded-0 mt-5 text-uppercase" type="submit">Registrarse</button>
-                    </form>
-                </div>
 
-                <div class="p-5 shadow mt-5">
-                    <h2 class="text-dark">Calcule su presupuesto</h2>
-                <p class="fs-4 w-75">
-                    Calcule usted mismo un presupuesto aproximado de su proyecto.
-                </p>
-                <div class="form">
-                    <label for="seleccion-producto">Seleccione un producto</label>
-                    <select name="seleccion-producto" id="seleccion-producto">
-                        <option value="">Seleccione un producto</option>
-                        <option value="producto1:3200">Diseño Salón - 3.200-€ </option>
-                        <option value="producto2:2600">Diseño de Baño - 2.600€</option>
-                        <option value="producto3:5000">Diseño de Cocina - 5000€</option>
-                        <option value="producto4:1400">Conjunto Dormitorio - 1.400€</option>
-                        <option value="producto5:6500">Remodelado Casa - 65.000€</option>
-                    </select>
+                        <label for="seleccion-producto">Seleccione un producto</label>
+                        <select name="seleccion-producto" id="seleccion-producto">
+                            <option value="">Seleccione un producto</option>
+                            <option value="producto1:3200">Diseño Salón - 3.200-€ </option>
+                            <option value="producto2:2600">Diseño de Baño - 2.600€</option>
+                            <option value="producto3:5000">Diseño de Cocina - 5000€</option>
+                            <option value="producto4:1400">Conjunto Dormitorio - 1.400€</option>
+                            <option value="producto5:6500">Remodelado Casa - 65.000€</option>
+                        </select>
 
-                    <label for="plazo">Plazo en meses</label>
-                    <input type="number" id="plazo" name="plazo" min="1">
-                    <span class="error" id="plazoError"></span>
-                    <div id="resultado"></div>
-                    <div>
-                        <h3>Extras:</h3>
-                        <label>
-                            <input type="checkbox" name="extra" value="500">
-                            Diseño 3D (+500€)
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="extra" value="300">
-                            Planos Adicionales (+300€)
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="extra" value="200">
-                            Asesoramiento Personalizado (+200€)
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="extra" value="100">
-                            Consultoría (+100€)
-                        </label>
-                    </div>
-                    <div id="presupuesto-final">
-                        <h3>Presupuesto Estimado:</h3>
-                        <p id="total-final">0 €</p>
-                    </div>
-                    <div>
-                        <h3>Condiciones y envío del presupuesto:</h3>
-                        <label>
-                            <input type="checkbox" id="condiciones" name="condiciones">
-                            Acepto las condiciones de privacidad
-                        </label>
-                        <br>
-                        <button class="btn rounded-0 mt-3 text-uppercase" id="enviar-presupuesto">Enviar Presupuesto</button>
-                        <button class="btn rounded-0 mt-3 text-uppercase" type="reset">Resetear Formulario</button>
-                    </div>
-                </div>
+                        <label for="plazo">Plazo en meses</label>
+                        <input type="number" id="plazo" name="plazo" min="0" max="24" step="6" value="0">
+                        <span class="error" id="plazoError"></span>
+                        <div id="resultado"></div>
+                        <div>
+                            <h3>Extras:</h3>
+                            <label>
+                                <input type="checkbox" name="extra" value="500">
+                                Diseño 3D (+500€)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="extra" value="300">
+                                Planos Adicionales (+300€)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="extra" value="200">
+                                Asesoramiento Personalizado (+200€)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="extra" value="100">
+                                Consultoría (+100€)
+                            </label>
+                        </div>
+                        <div id="presupuesto-final">
+                            <h3>Presupuesto Estimado:</h3>
+                            <p id="total-final">0 €</p>
+                        </div>
+                        <div>
+                            <h3>Condiciones y envío del presupuesto:</h3>
+                            <label>
+                                <input type="checkbox" id="condiciones" name="condiciones">
+                                Acepto las condiciones de privacidad
+                            </label>
+                            <br>
+                            <button class="btn rounded-0 mt-3 text-uppercase" id="enviar-presupuesto">Enviar
+                                Presupuesto</button>
+                            <button class="btn rounded-0 mt-3 text-uppercase" type="reset">Resetear Formulario</button>
+                        </div>
+                   </div>
+                </form>
                 </div>
             </div>
         </section>

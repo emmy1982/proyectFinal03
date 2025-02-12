@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('nav');
     const links = document.querySelectorAll('.nav-link');
     const logo = document.querySelector('.logo a');
+    const dropdown = document.querySelector('.dropdown-menu');
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
 
     // Menú hamburguesa
 
@@ -37,6 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
             links.forEach(link => {
                 link.style.color = 'var(--text-color-black)!important';
             });
+            dropdown.style.background = 'var(--background-color)!important';
+            dropdownLinks.forEach(dropdownLink => {
+                dropdownLink.style.color = 'var(--text-color-black)!important';
+                dropdownLink.addEventListener('mouseover', () => {
+                    dropdownLink.style.color = 'var(--primary-color)!important';
+                });
+                dropdownLink.addEventListener('mouseout', () => {
+                    dropdownLink.style.color = 'var(--text-color-black)!important';
+                });
+            });
         } else {
             hamburgerSpam.forEach(span => {
                 span.style.background = 'var(--terciary-white)!important';
@@ -48,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
             links.forEach(link => {
                 link.style.color = 'var(--terciary-white)!important';
             });
+            dropdown.style.background = 'linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(34, 34, 34, 0.8))';
+            dropdownLinks.forEach(dropdownLink => {
+                dropdownLink.style.color = 'var(--terciary-white)';
+            });
+
+
         }
     });
 
@@ -141,85 +159,93 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-         // Presupuesto
-         let presupuesto = 0;
+    // Presupuesto
+    let presupuesto = 0;
 
-         // Elementos del Dom
-         const selectorProducto = document.getElementById('seleccion-producto');
-         const plazoInput = document.getElementById('plazo');
-         const resultadoDiv = document.getElementById('resultado');
-         const totalFinal = document.getElementById('total-final');
-         const checkboxes = document.querySelectorAll('input[name="extra"]');
-         const condicionesCheckbox = document.getElementById('condiciones');
-         const enviarPresupuestoBtn = document.getElementById('enviar-presupuesto');
- 
-         selectorProducto.addEventListener('change', calcularPresupuesto);
-         plazoInput.addEventListener('input', calcularPresupuesto);
-         checkboxes.forEach(checkbox => checkbox.addEventListener('change', calcularPresupuesto));
-         condicionesCheckbox.addEventListener('change', validarCondiciones);
-         enviarPresupuestoBtn.addEventListener('click', enviarPresupuesto);
- 
-         function calcularPresupuesto() {
-             let productoSeleccionado = selectorProducto.value;
-             let plazo = parseInt(plazoInput.value) || 1;
-             let total = 0;
- 
-             if (productoSeleccionado) {
-             let [nombreProducto, precioProducto] = productoSeleccionado.split(':');
-             let precio = parseFloat(precioProducto);
-             total += precio;
-             }
- 
-             checkboxes.forEach(checkbox => {
-             if (checkbox.checked) {
-                 total += parseFloat(checkbox.value);
-             }
-             });
- 
-             presupuesto = total;
-             totalFinal.textContent = presupuesto + ' €';
-         }
- 
-         function validarCondiciones() {
-             if (condicionesCheckbox.checked) {
-             enviarPresupuestoBtn.disabled = false;
-             } else {
-             enviarPresupuestoBtn.disabled = true;
-             }
-         }
- 
-         function enviarPresupuesto() {
-             if (!condicionesCheckbox.checked) {
-             alert('Acepta las condiciones para enviar el presupuesto.');
-             return;
-             }
- 
-             alert('Presupuesto enviado!');
-         }
+    // Elementos del Dom
+    const selectorProducto = document.getElementById('seleccion-producto');
+    const plazoInput = document.getElementById('plazo');
+    const resultadoDiv = document.getElementById('resultado');
+    const totalFinal = document.getElementById('total-final');
+    const checkboxes = document.querySelectorAll('input[name="extra"]');
+    const condicionesCheckbox = document.getElementById('condiciones');
+    const enviarPresupuestoBtn = document.getElementById('enviar-presupuesto');
 
+    selectorProducto.addEventListener('change', calcularPresupuesto);
+    plazoInput.addEventListener('input', calcularPresupuesto);
+    checkboxes.forEach(checkbox => checkbox.addEventListener('change', calcularPresupuesto));
+    condicionesCheckbox.addEventListener('change', validarCondiciones);
+    enviarPresupuestoBtn.addEventListener('click', enviarPresupuesto);
 
+    function calcularPresupuesto() {
+        let productoSeleccionado = selectorProducto.value;
+        let plazo = parseInt(plazoInput.value);
+        let descuentoPlazo = 0;
+        // First calculate base price from selected product and extras
+        presupuesto = 0;
 
+        if (plazo > 0 && plazo <= 24) {
+            descuentoPlazo = presupuesto * (0.03 * (plazo / 6));
+        }
 
-    // Botón subir
-    const btnBackToTop = document.getElementById('btn-top');
+        presupuesto -= descuentoPlazo;
+        let total = 0;
 
-    if (btnBackToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                btnBackToTop.classList.add('show');
-            } else {
-                btnBackToTop.classList.remove('show');
+        if (productoSeleccionado) {
+            let [nombreProducto, precioProducto] = productoSeleccionado.split(':');
+            let precio = parseFloat(precioProducto);
+            total += precio;
+        }
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                total += parseFloat(checkbox.value);
             }
         });
 
-        btnBackToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        presupuesto = total;
+        totalFinal.textContent = presupuesto + ' €';
     }
+
+    function validarCondiciones() {
+        if (condicionesCheckbox.checked) {
+            enviarPresupuestoBtn.disabled = false;
+        } else {
+            enviarPresupuestoBtn.disabled = true;
+        }
+    }
+
+    function enviarPresupuesto() {
+        if (!condicionesCheckbox.checked) {
+            alert('Acepta las condiciones para enviar el presupuesto.');
+            return;
+        }
+
+        alert('Presupuesto enviado!');
+    }
+
+
 });
+
+// Botón subir
+const btnBackToTop = document.getElementById('btn-top');
+
+if (btnBackToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btnBackToTop.classList.add('show');
+        } else {
+            btnBackToTop.classList.remove('show');
+        }
+    });
+
+    btnBackToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 
 // Slider de index principal
