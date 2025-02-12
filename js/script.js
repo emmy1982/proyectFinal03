@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const hamburgerSpam = document.querySelectorAll('.hamburger span');
     const navMenu = document.querySelector('.nav-menu');
-    const navbar = document.querySelector('nav'); 
+    const navbar = document.querySelector('nav');
     const links = document.querySelectorAll('.nav-link');
     const logo = document.querySelector('.logo a');
 
@@ -50,6 +50,175 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // FORMULARIO
+
+    const nombreInput = document.getElementById('nombre');
+    const apellidoInput = document.getElementById('apellido');
+    const telefonoInput = document.getElementById('telefono');
+    const emailInput = document.getElementById('email');
+    const formulario = document.getElementById('formulario');
+
+    function validarNombre() {
+        const nombre = nombreInput.value;
+        const nombrePattern = /^[a-zA-Z]*$/;
+        if (nombre.length >= 3 && nombre.length <= 15 && nombrePattern.test(nombre)) {
+            nombreInput.classList.add('valido');
+            nombreInput.classList.remove('invalido');
+            document.getElementById('nombreError').textContent = '';
+        } else {
+            nombreInput.classList.add('invalido');
+            nombreInput.classList.remove('valido');
+            document.getElementById('nombreError').textContent = 'El nombre debe tener entre 3 y 15 caracteres, sin números ni caracteres especiales';
+        }
+    }
+    function validarApellido() {
+        const apellido = apellidoInput.value;
+        const apellidoPattern = /^[a-zA-Z]*$/;
+        if (apellido.length >= 3 && apellido.length <= 40 && apellidoPattern.test(apellido)) {
+            apellidoInput.classList.add('valido');
+            apellidoInput.classList.remove('invalido');
+            document.getElementById('apellidoError').textContent = '';
+        } else {
+            apellidoInput.classList.add('invalido');
+            apellidoInput.classList.remove('valido');
+            document.getElementById('apellidoError').textContent = 'El apellido debe tener entre 3 y 40 caracteres, sin números ni caracteres especiales';
+        }
+    }
+    function validarTelefono() {
+        const telefono = telefonoInput.value;
+        const telefonoPattern = /^[0-9]{1,9}$/;
+        if (telefonoPattern.test(telefono)) {
+            telefonoInput.classList.add('valido');
+            telefonoInput.classList.remove('invalido');
+            document.getElementById('telefonoError').textContent = '';
+        } else {
+            telefonoInput.classList.add('invalido');
+            telefonoInput.classList.remove('valido');
+            document.getElementById('telefonoError').textContent = 'El teléfono debe tener solo números y no debe superar los 10 dígitos';
+        }
+    }
+    function validarEmail() {
+        const email = emailInput.value;
+        const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+/;
+        if (emailPattern.test(email)) {
+            emailInput.classList.add('valido');
+            emailInput.classList.remove('invalido');
+            document.getElementById('emailError').textContent = '';
+        } else {
+            emailInput.classList.add('invalido');
+            emailInput.classList.remove('valido');
+            document.getElementById('emailError').textContent = 'El email debe tener un formato válido';
+        }
+    }
+
+    function resetFormulario() {
+        formulario.reset();
+        nombreInput.classList.remove('valido');
+        apellidoInput.classList.remove('valido');
+        telefonoInput.classList.remove('valido');
+        emailInput.classList.remove('valido');
+    }
+
+    nombreInput.addEventListener('input', validarNombre);
+    apellidoInput.addEventListener('input', validarApellido);
+    telefonoInput.addEventListener('input', validarTelefono);
+    emailInput.addEventListener('input', validarEmail);
+
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault();
+        validarNombre();
+        validarApellido();
+        validarTelefono();
+        validarEmail();
+
+        if (nombreInput.classList.contains('valido') && apellidoInput.classList.contains('valido') && telefonoInput.classList.contains('valido') && emailInput.classList.contains('valido')) {
+            alert('Formulario enviado correctamente');
+
+            resetFormulario();
+        } else {
+            alert('Formulario no enviado, corrige los errores');
+        }
+    });
+
+         // Presupuesto
+         let presupuesto = 0;
+
+         // Elementos del Dom
+         const selectorProducto = document.getElementById('seleccion-producto');
+         const plazoInput = document.getElementById('plazo');
+         const resultadoDiv = document.getElementById('resultado');
+         const totalFinal = document.getElementById('total-final');
+         const checkboxes = document.querySelectorAll('input[name="extra"]');
+         const condicionesCheckbox = document.getElementById('condiciones');
+         const enviarPresupuestoBtn = document.getElementById('enviar-presupuesto');
+ 
+         selectorProducto.addEventListener('change', calcularPresupuesto);
+         plazoInput.addEventListener('input', calcularPresupuesto);
+         checkboxes.forEach(checkbox => checkbox.addEventListener('change', calcularPresupuesto));
+         condicionesCheckbox.addEventListener('change', validarCondiciones);
+         enviarPresupuestoBtn.addEventListener('click', enviarPresupuesto);
+ 
+         function calcularPresupuesto() {
+             let productoSeleccionado = selectorProducto.value;
+             let plazo = parseInt(plazoInput.value) || 1;
+             let total = 0;
+ 
+             if (productoSeleccionado) {
+             let [nombreProducto, precioProducto] = productoSeleccionado.split(':');
+             let precio = parseFloat(precioProducto);
+             total += precio;
+             }
+ 
+             checkboxes.forEach(checkbox => {
+             if (checkbox.checked) {
+                 total += parseFloat(checkbox.value);
+             }
+             });
+ 
+             presupuesto = total;
+             totalFinal.textContent = presupuesto + ' €';
+         }
+ 
+         function validarCondiciones() {
+             if (condicionesCheckbox.checked) {
+             enviarPresupuestoBtn.disabled = false;
+             } else {
+             enviarPresupuestoBtn.disabled = true;
+             }
+         }
+ 
+         function enviarPresupuesto() {
+             if (!condicionesCheckbox.checked) {
+             alert('Acepta las condiciones para enviar el presupuesto.');
+             return;
+             }
+ 
+             alert('Presupuesto enviado!');
+         }
+
+
+
+
+    // Botón subir
+    const btnBackToTop = document.getElementById('btn-top');
+
+    if (btnBackToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnBackToTop.classList.add('show');
+            } else {
+                btnBackToTop.classList.remove('show');
+            }
+        });
+
+        btnBackToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
 
 
@@ -213,26 +382,6 @@ var swiper = new Swiper(".testimonials", {
         disableOnInteraction: false,
     },
     loop: true,
-});
-
-
-// Botón subir
-
-const btnBackToTop = document.getElementById('btn-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        btnBackToTop.classList.add('show');
-    } else {
-        btnBackToTop.classList.remove('show');
-    }
-});
-
-btnBackToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });
 
 

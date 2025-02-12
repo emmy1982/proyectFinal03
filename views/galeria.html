@@ -43,15 +43,15 @@
                 <span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link activo">Inicio</a></li>
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="#" class="nav-link">Proyectos</a>
+                    <a href="#" class="nav-link activo">Proyectos</a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Arquitectura Exteriores</a></li>
                         <li><a href="#">Diseño de Interiores</a></li>
                     </ul>
                 </li>
-                <li><a href="./pages/presupuestos.html" class="nav-link">Presupuestos</a></li>
+                <li><a href="./presupuesto.html" class="nav-link">Presupuestos</a></li>
                 <li><a href="./contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
@@ -78,12 +78,12 @@
             <i class="bi bi-arrow-up"></i>
         </button>
 
-        <section>
+        <section class="mt-5">
 
             <!-- Introducción a Nuestros Proyectos -->
-            <div class="container container-galeria-presentacion p-4 p-md-4 mt-5">
+            <div class="container container-galeria-presentacion  p-4 p-md-2 mt-5">
                 <div class="galeria-intro">
-                    <h2 class="text-dark">Nuestros Proyectos Destacados</h2>
+                    <h2 class="text-dark title-h2">Nuestros Proyectos Destacados</h2>
                     <p class="w-75 mb-5">
                         En ARCHITECT nos especializamos en crear espacios únicos que combinan funcionalidad y estética.
                         A lo largo de nuestra trayectoria, hemos desarrollado proyectos innovadores que reflejan nuestra
@@ -95,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container "  id="proyectos">
                 <p class="fw-bold p-title">
                     ULTIMOS PROYECTOS ARQUITECTURA
                 </p>
@@ -154,46 +154,48 @@
                     ¿Tienes un proyecto en mente? Contáctanos para recibir más información sobre nuestros servicios y
                     presupuestos.
                 </P>
-                <a href="./pages/contacto.html" class="btn">Contactar</a>
+                <a href="./contacto.html" class="btn rounded-0">CONTACTAR</a>
             </div>
-            <div class="container mt-5 pt-5">
-                <p class="fw-bold p-title">
-                    DISEÑO DE INTERIORES
-                </p>
-            </div>
+               
+            
 
             <!-- Galeria de imagenes 2 -->
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <a href="../images/img-hero-8.jpg" data-lightbox="galeria2" data-title="Baño de Diseño">
-                        <img class="img-gallery-special" src="../images/img-hero-8.jpg" alt=" Baño de Diseño">
-                    </a>
-                </div>
-                <div class="col-md-6 col-12 p-0">
-                    <div class="row">
-                        <div class="col-md-6 col-12 p-0 position-relative">
-                            <a href="../images/img-hero-9.jpg" data-lightbox="galeria2"
-                                data-title="Diseño de Dormitorios">
-                                <img class="img-gallery-1" src="../images/img-hero-9.jpg" alt="Diseño de Dormitorios">
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-12 p-0 position-relative">
-                            <a href="../images/img-hero-7.jpg" data-lightbox="galeria2" data-title="Cocina Minimalista">
-                                <img class="img-gallery-1" src="../images/img-hero-7.jpg" alt="Cocina Minimalista">
-                            </a>
-                        </div>
+            <div class="container mt-5 pt-3">
+                 <p class="fw-bold p-title text-start mt-5">
+                    DISEÑO DE INTERIORES
+                </p>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <a href="../images/img-hero-8.jpg" data-lightbox="galeria2" data-title="Baño de Diseño">
+                            <img class="img-gallery-special" src="../images/img-hero-8.jpg" alt=" Baño de Diseño">
+                        </a>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-12 p-0 position-relative">
-                            <a href="../images/room.jpg" data-lightbox="galeria2" data-title="Dormitorio Moderno">
-                                <img class="img-gallery-1" src="../images/room.jpg" alt="Dormitorio Moderno">
-                            </a>
+                    <div class="col-md-6 col-12 p-0">
+                        <div class="row">
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/img-hero-9.jpg" data-lightbox="galeria2"
+                                    data-title="Diseño de Dormitorios">
+                                    <img class="img-gallery-1" src="../images/img-hero-9.jpg" alt="Diseño de Dormitorios">
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/img-hero-7.jpg" data-lightbox="galeria2" data-title="Cocina Minimalista">
+                                    <img class="img-gallery-1" src="../images/img-hero-7.jpg" alt="Cocina Minimalista">
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-md-6 col-12 p-0 position-relative">
-                            <a href="../images/news(3).jpg" data-lightbox="galeria2"
-                                data-title="Apartamentos Minimalistas">
-                                <img class="img-gallery-1" src="../images/news3.jpg" alt="Apartamentos Minimalistas">
-                            </a>
+                        <div class="row">
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/room.jpg" data-lightbox="galeria2" data-title="Dormitorio Moderno">
+                                    <img class="img-gallery-1" src="../images/room.jpg" alt="Dormitorio Moderno">
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-12 p-0 position-relative">
+                                <a href="../images/news(3).jpg" data-lightbox="galeria2"
+                                    data-title="Apartamentos Minimalistas">
+                                    <img class="img-gallery-1" src="../data/news3.jpg" alt="Apartamentos Minimalistas">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
