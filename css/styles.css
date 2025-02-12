@@ -1511,11 +1511,11 @@ video {
     /* Ajustes del slider para móvil */
 
     .hero {
-        height: 100vh;
+        height: 110vh;
     }
 
     .hero .swiper-slide {
-        height: 100vh;
+        height: 110vh;
     }
 
     .content-title {
