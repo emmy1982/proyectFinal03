@@ -70,8 +70,14 @@
 
     <!-- Main -->
     <main>
+
+        <!-- Botón subir -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        
         <section>
-            <div class="container pt-5 mt-5">
+            <div class="container py-5 my-5">
                 <div class=" p-5 shadow">
                     <h2 class="text-dark">Solicita tu presupuesto</h2>
                     <p class="fs-5 w-75">
@@ -98,7 +104,7 @@
                             <input type="email" id="email" name="email">
                             <span class="error" id="emailError"></span>
                         </div>
-                        <button class="btn rounded-0 mt-5 text-uppercase" type="submit">Registrarse</button>
+                        <!-- <button class="btn rounded-0 mt-5 text-uppercase" type="submit">Registrarse</button> -->
 
                         <label for="seleccion-producto">Seleccione un producto</label>
                         <select name="seleccion-producto" id="seleccion-producto">
@@ -147,9 +153,8 @@
                                 Acepto las condiciones de privacidad
                             </label>
                             <br>
-                            <button class="btn rounded-0 mt-3 text-uppercase" id="enviar-presupuesto">Enviar
-                                Presupuesto</button>
-                            <button class="btn rounded-0 mt-3 text-uppercase" type="reset">Resetear Formulario</button>
+                            <button class="btn rounded-0 mt-5 text-uppercase" id="enviar-presupuesto">Enviar</button>
+                            <!-- <button class="btn rounded-0 mt-3 text-uppercase" type="reset">Resetear Formulario</button> -->
                         </div>
                    </div>
                 </form>

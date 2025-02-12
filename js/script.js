@@ -162,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Presupuesto
     let presupuesto = 0;
 
-    // Elementos del Dom
     const selectorProducto = document.getElementById('seleccion-producto');
     const plazoInput = document.getElementById('plazo');
     const resultadoDiv = document.getElementById('resultado');
@@ -180,21 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function calcularPresupuesto() {
         let productoSeleccionado = selectorProducto.value;
         let plazo = parseInt(plazoInput.value);
-        let descuentoPlazo = 0;
-        // First calculate base price from selected product and extras
-        presupuesto = 0;
-
-        if (plazo > 0 && plazo <= 24) {
-            descuentoPlazo = presupuesto * (0.03 * (plazo / 6));
-        }
-
-        presupuesto -= descuentoPlazo;
         let total = 0;
 
         if (productoSeleccionado) {
             let [nombreProducto, precioProducto] = productoSeleccionado.split(':');
-            let precio = parseFloat(precioProducto);
-            total += precio;
+            total += parseFloat(precioProducto);
         }
 
         checkboxes.forEach(checkbox => {
@@ -203,8 +192,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        if (plazo > 0 && plazo <= 24) {
+            let descuentoPlazo = total * (0.03 * (plazo / 6));
+            total -= descuentoPlazo;
+        }
+
         presupuesto = total;
-        totalFinal.textContent = presupuesto + ' €';
+        totalFinal.textContent = presupuesto.toFixed(2) + ' €';
     }
 
     function validarCondiciones() {
@@ -216,12 +210,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function enviarPresupuesto() {
-        if (!condicionesCheckbox.checked) {
-            alert('Acepta las condiciones para enviar el presupuesto.');
+        validarNombre();
+        validarApellido();
+        validarTelefono();
+        validarEmail();
+
+        if (!selectorProducto.value) {
+            alert('Por favor, selecciona un producto');
             return;
         }
 
-        alert('Presupuesto enviado!');
+        if (!condicionesCheckbox.checked) {
+            alert('Debes aceptar las condiciones de privacidad');
+            return;
+        }
+
+        if (!(nombreInput.classList.contains('valido') &&
+            apellidoInput.classList.contains('valido') &&
+            telefonoInput.classList.contains('valido') &&
+            emailInput.classList.contains('valido'))) {
+            alert('Por favor, completa correctamente todos los campos del formulario');
+            return;
+        }
+
+        alert('¡Presupuesto enviado!');
+
+        resetFormulario();
+        selectorProducto.value = '';
+        plazoInput.value = '';
+        checkboxes.forEach(checkbox => checkbox.checked = false);
+        condicionesCheckbox.checked = false;
+        calcularPresupuesto();
+        validarCondiciones();
     }
 
 

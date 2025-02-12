@@ -796,7 +796,6 @@ video {
     padding: 20px;
 }
 
-/* Estilos para cada tarjeta de noticia */
 .news-card {
     width: 400px;
     background-color: var(--terciary-white);
@@ -808,28 +807,25 @@ video {
 .news-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.9);
 }
 
-/* Estilos para la imagen de la noticia */
 .news-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* Estilos para el contenido de la noticia */
 .news-content {
     padding: 20px;
 }
 
-/* Estilos para el título de la noticia */
 .news-content h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: var(--text-color-black);
 }
 
-/* Estilos para la fecha de la noticia */
 .news-content .date {
     font-size: 0.9rem;
     color: var(--secondary-color);
@@ -837,7 +833,6 @@ video {
     display: block;
 }
 
-/* Estilos para el contenido de la noticia */
 .news-content p {
     font-size: 1rem;
     color: var(--text-color);
@@ -1154,6 +1149,14 @@ video {
     width: 100%;
     height: 400px !important;
     z-index: 1;
+}
+
+.img-contact img{
+    transition: all 0.3s ease-out!important;
+}   
+.img-contact img:hover{
+    filter: brightness(0.8)!important;
+    transform:translateY(-5px);
 }
 
 /* ***************************************************************************
