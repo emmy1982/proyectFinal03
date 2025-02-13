@@ -119,17 +119,17 @@ header {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    
 }
 
 .btn:hover {
     background-color: var(--accent-color) !important;
-    color: var (--accent-color);
+    color: var(--accent-color);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-button a:hover{
+.btn a:hover {
     color: var(--accent-color);
+    text-decoration: none;
 }
 
 
@@ -409,23 +409,22 @@ strong {
     border: 1.8px solid var(--terciary-white);
     cursor: pointer;
     transition: background-color 0.3s ease;
-
 }
 
 .content-title button a {
     text-decoration: none;
     color: var(--terciary-white);
-
 }
 
-.content-title button:hover a {
+.content-title button a:hover {
     text-decoration: none;
-    color: var (--accent-color);
+    color: var(--accent-color);
 }
 
 .content-title button:hover {
     background-color: var(--background-color);
     color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 
@@ -511,7 +510,6 @@ strong {
     margin-top: -40px;
     position: relative;
     top: -50px;
-    /* Adjusted from -10px to -50px to move it further up */
     left: 0;
 }
 
@@ -901,7 +899,7 @@ video {
     margin-bottom: 0.5rem;
 }
 
-/* Footer Styles */
+/* Footer  */
 .footer-section {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.144) 0%, transparent 100%);
     padding: 5rem 0 2rem;
@@ -1081,7 +1079,6 @@ video {
     align-items: center;
     background: url(../images/img-hero1.jpg) no-repeat center center/cover;
     filter: brightness(0.6);
-    /* Adjust the value to control the brightness */
     background-attachment: fixed;
 }
 
